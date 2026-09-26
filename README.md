@@ -8,6 +8,8 @@
 
 A lightweight, native Python desktop application (`tkinter`-based) for downloading videos and audio using `yt-dlp`. No web browser or server setup required!
 
+![App Screenshot](screenshot.png)
+
 ## ✨ Features
 
 * **Native Desktop UI**: Built with `tkinter`, runs instantly as a lightweight desktop app.
