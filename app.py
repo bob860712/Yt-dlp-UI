@@ -358,7 +358,10 @@ class DownloaderApp:
         self.sub_label.config(text=t("sub_label"))
         self.sub_tip_label.config(text=t("sub_tip"))
         self.download_btn.config(text=t("download_btn"))
-        if not self.status_label.cget("text"):
+        
+        # 同步更新資料夾提示文字與狀態列文字
+        self.update_dir_label_text()
+        if self.status_label.cget("text") in [LANGS[lang].get("status_ready") for lang in LANGS]:
             self.status_label.config(text=t("status_ready"))
 
     def update_dir_label_text(self):
@@ -367,6 +370,8 @@ class DownloaderApp:
             self.dir_path_label.config(text=self.save_dir)
         else:
             self.dir_path_label.config(text=t("no_dir"))
+            
+    # （其餘原本的方法保持不變）
 
     def select_directory(self):
         dir_path = filedialog.askdirectory()
